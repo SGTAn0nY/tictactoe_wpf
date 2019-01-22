@@ -25,7 +25,7 @@ namespace TicTacToeFinalWPF
 
 
 
-
+        public bool bot_stop = false;
         string whichplayer = "X";
         int drawcounter = 0, has_someone_won = 0;
         public List<int> list = new List<int>(new int[] { 11, 22, 33, 44, 55, 66, 77, 88, 99 });
@@ -84,7 +84,9 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer);  }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
+            
             
 
         }
@@ -109,7 +111,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
@@ -131,7 +134,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
@@ -153,7 +157,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
         }
 
         private void button5_Click(object sender, RoutedEventArgs e)
@@ -175,7 +180,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
@@ -197,7 +203,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
         }
 
         private void button7_Click(object sender, RoutedEventArgs e)
@@ -219,7 +226,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
@@ -241,7 +249,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) { }
+            else { Bot_turn(bot_field_choice); }
         }
 
         private void button9_Click(object sender, RoutedEventArgs e)
@@ -263,7 +272,8 @@ namespace TicTacToeFinalWPF
                 else { Winmsg(whichplayer); }
             }
             else { MessageBox.Show("Field already taken !"); whichplayer = "X"; }
-            Bot_turn(bot_field_choice);
+            if (bot_stop) {  }
+            else { Bot_turn(bot_field_choice); }
         }
 
 
@@ -271,6 +281,7 @@ namespace TicTacToeFinalWPF
         {
             if (drawcounter >= 9)
             {
+                bot_stop = true;
                 MessageBox.Show("It's a draw !");
                 this.Close();
             }
@@ -325,11 +336,13 @@ namespace TicTacToeFinalWPF
         {
             if (whichplayer == "X")
             {
+                bot_stop = true;
                 MessageBox.Show("Player X wins !");
                 this.Close();
             }
             if (whichplayer == "O")
             {
+                bot_stop = true;
                 MessageBox.Show("Bot wins !");
                 this.Close();
             }
