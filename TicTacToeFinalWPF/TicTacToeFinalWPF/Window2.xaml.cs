@@ -37,7 +37,8 @@ namespace TicTacToeFinalWPF
         public void Bot_turn(int bot_field_choice)
         {
             this.Title = "Player X:";
-            bot_field_choice = r.Next(bot_choice_list.Count);
+            int index = r.Next(bot_choice_list.Count);
+            bot_field_choice = bot_choice_list[index];
 
             if (bot_field_choice == 0) { bot_choice_list.Remove(0);  button1.Content = "O"; }
             if (bot_field_choice == 1) { bot_choice_list.Remove(1); button2.Content = "O"; }
