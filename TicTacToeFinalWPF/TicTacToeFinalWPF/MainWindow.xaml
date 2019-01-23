@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Tic Tac Toe" Height="350" Width="525">
     <Grid>
-        <Button Content="Spieler vs Spieler" Height="23" HorizontalAlignment="Left" Margin="211,143,0,0" Name="button1" VerticalAlignment="Top" Width="100" Click="button1_Click" />
-        <Button Content="Spieler vs Bot" Height="23" HorizontalAlignment="Left" Margin="211,224,0,0" Name="button2" VerticalAlignment="Top" Width="100" Click="button2_Click" />
+        <Button Content="Player vs Player" Height="23" HorizontalAlignment="Left" Margin="211,143,0,0" Name="button1" VerticalAlignment="Top" Width="100" Click="button1_Click" />
+        <Button Content="Player vs Bot" Height="23" HorizontalAlignment="Left" Margin="211,224,0,0" Name="button2" VerticalAlignment="Top" Width="100" Click="button2_Click" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="211,59,0,0" Name="textBlock1" Text="Tic Tac Toe !" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="253,276,0,0" Name="textBlock2" Text="Made by Kjell Ziegert @ ipn Software GmbH" VerticalAlignment="Top" Width="238" />
     </Grid>
