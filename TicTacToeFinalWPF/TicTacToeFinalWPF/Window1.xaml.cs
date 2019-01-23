@@ -24,13 +24,14 @@ namespace TicTacToeFinalWPF
         }
 
 
+        //Everything that needs to be used by all methods
         string whichplayer = "X";
         int drawcounter = 0, has_someone_won = 0;
         public List<int> list = new List<int>(new int[] { 11, 22, 33, 44, 55, 66, 77, 88, 99 });
 
         
 
-
+        //Event handler for when button/field 1 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -75,6 +76,7 @@ namespace TicTacToeFinalWPF
             
         }
 
+        //Event handler for when button/field 2 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -118,6 +120,7 @@ namespace TicTacToeFinalWPF
             }
         }
 
+        //Event handler for when button/field 3 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -159,6 +162,7 @@ namespace TicTacToeFinalWPF
             }
         }
 
+        //Event handler for when button/field 4 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -200,6 +204,7 @@ namespace TicTacToeFinalWPF
             }
         }
 
+        //Event handler for when button/field 5 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -241,6 +246,7 @@ namespace TicTacToeFinalWPF
             }
         }
 
+        //Event handler for when button/field 6 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button6_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -282,6 +288,7 @@ namespace TicTacToeFinalWPF
             }
         }
 
+        //Event handler for when button/field 7 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button7_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -323,6 +330,7 @@ namespace TicTacToeFinalWPF
             }
         }
 
+        //Event handler for when button/field 8 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button8_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -364,6 +372,7 @@ namespace TicTacToeFinalWPF
             }
         }
 
+        //Event handler for when button/field 9 is clicked, determines which player clicked, sets that field up for that player, checks if someone won.
         private void button9_Click(object sender, RoutedEventArgs e)
         {
             switch (whichplayer)
@@ -406,6 +415,7 @@ namespace TicTacToeFinalWPF
         }
 
 
+        //Method that checks if 9 turns were made and determines if the game ends as a draw.
         private void Check_draw(int drawcounter)
         {
             if (drawcounter >= 9)
@@ -417,7 +427,7 @@ namespace TicTacToeFinalWPF
         }
 
 
-
+        //Method that checks if someone has won (compares status of the fields), called after every turn.
         public static int Has_someone_won(List<int> list)
         {
             if (list[0] == list[1] && list[1] == list[2]) { return 1; }
@@ -459,7 +469,7 @@ namespace TicTacToeFinalWPF
 
 
 
-
+        //Method that outputs a winmessage for the player who won and closes the game window (while the menu window was left open), called whenever someone won the game.
         public void Winmsg(string whichplayer)
         {
             if (whichplayer == "X")

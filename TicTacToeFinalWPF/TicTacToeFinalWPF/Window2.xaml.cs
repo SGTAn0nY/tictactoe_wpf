@@ -34,6 +34,7 @@ namespace TicTacToeFinalWPF
         public Random r = new Random();
 
 
+        //Method for Bot's turn (called after every turn of the player), determines random field that is not taken, sets that up for the Bot and checks if someone won.
         public void Bot_turn(int bot_field_choice)
         {
             this.Title = "Player X:";
@@ -63,7 +64,7 @@ namespace TicTacToeFinalWPF
         }
 
 
-
+        //Event handler for when button/field 1 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(0);
@@ -91,6 +92,7 @@ namespace TicTacToeFinalWPF
 
         }
 
+        //Event handler for when button/field 2 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(1);
@@ -115,6 +117,7 @@ namespace TicTacToeFinalWPF
             else { Bot_turn(bot_field_choice); }
         }
 
+        //Event handler for when button/field 3 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(2);
@@ -138,6 +141,7 @@ namespace TicTacToeFinalWPF
             else { Bot_turn(bot_field_choice); }
         }
 
+        //Event handler for when button/field 4 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(3);
@@ -161,6 +165,7 @@ namespace TicTacToeFinalWPF
             else { Bot_turn(bot_field_choice); }
         }
 
+        //Event handler for when button/field 5 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(4);
@@ -184,6 +189,7 @@ namespace TicTacToeFinalWPF
             else { Bot_turn(bot_field_choice); }
         }
 
+        //Event handler for when button/field 6 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button6_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(5);
@@ -207,6 +213,7 @@ namespace TicTacToeFinalWPF
             else { Bot_turn(bot_field_choice); }
         }
 
+        //Event handler for when button/field 7 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button7_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(6);
@@ -230,6 +237,7 @@ namespace TicTacToeFinalWPF
             else { Bot_turn(bot_field_choice); }
         }
 
+        //Event handler for when button/field 8 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button8_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(7);
@@ -253,6 +261,7 @@ namespace TicTacToeFinalWPF
             else { Bot_turn(bot_field_choice); }
         }
 
+        //Event handler for when button/field 9 is clicked, sets that field up for that player, checks if someone won and calls the Bot's turn.
         private void button9_Click(object sender, RoutedEventArgs e)
         {
             bot_choice_list.Remove(8);
@@ -277,6 +286,7 @@ namespace TicTacToeFinalWPF
         }
 
 
+        //Method that checks if 9 turns were made and determines if the game ends as a draw.
         private void Check_draw(int drawcounter)
         {
             if (drawcounter >= 9)
@@ -289,7 +299,7 @@ namespace TicTacToeFinalWPF
         }
 
 
-
+        //Method that checks if someone has won (compares status of the fields), called after every turn.
         public static int Has_someone_won(List<int> list)
         {
             if (list[0] == list[1] && list[1] == list[2]) { return 1; }
@@ -331,7 +341,7 @@ namespace TicTacToeFinalWPF
 
 
 
-
+        //Method that outputs a winmessage for the player (or Bot) who won and closes the game window (while the menu window was left open), called whenever someone won the game.
         public void Winmsg(string whichplayer)
         {
             if (whichplayer == "X")
